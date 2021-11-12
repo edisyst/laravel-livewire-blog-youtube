@@ -16,8 +16,8 @@ class Posts extends Component
 
     public $title;
     public $body;
-    public $image;
     public $postId = null;
+    public $image;
     public $newImage;
 
     public $showModalForm = false;
@@ -52,6 +52,7 @@ class Posts extends Component
         $this->reset();
         session()->flash('flash.banner', 'Post created Successfully');
     }
+
     public function showEditPostModal($id)
     {
         $this->reset();
@@ -97,6 +98,7 @@ class Posts extends Component
         $post->delete();
         session()->flash('flash.banner', 'Post Deleted Successfully');
     }
+
     public function render()
     {
         return view('livewire.posts', [
